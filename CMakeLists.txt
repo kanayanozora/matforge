@@ -15,6 +15,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Library
 add_library(matforge
         src/matrix.cpp
+        include/matforge/matrix.hpp
 )
 
 target_include_directories(matforge
