@@ -1,8 +1,10 @@
-//
-// Created by User on 21/11/2026.
-//
+#pragma once
+#include <vector>
+#include <matforge/matrix.hpp>
 
-#ifndef MATFORGE_MATRIXOP_HPP
-#define MATFORGE_MATRIXOP_HPP
-
-#endif //MATFORGE_MATRIXOP_HPP
+//Methods
+class MatrixOp {
+public:
+    Matrix mtxAddition(const Matrix& a, const Matrix& b);
+    Matrix mtxSubtraction(const Matrix& a, const Matrix& b);
+};

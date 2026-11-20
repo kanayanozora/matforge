@@ -2,7 +2,6 @@
 #include <vector>
 
 class Matrix {
-private:
     int row;
     int col;
     std::vector<double> mtx;
