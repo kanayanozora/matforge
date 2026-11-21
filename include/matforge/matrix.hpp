@@ -8,6 +8,7 @@ class Matrix {
 
 public:
     Matrix(int row, int col);
+    Matrix();
     ~Matrix();
 
     int getRow() const;

@@ -4,6 +4,8 @@ using namespace std;
 
 //Constructor
 Matrix::Matrix(int row, int col): row(row), col(col), mtx(row * col) {};
+Matrix::Matrix(): row(0), col(0) {};
+Matrix::~Matrix() {}
 
 // Getters
 int Matrix::getRow() const {

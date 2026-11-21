@@ -3,19 +3,20 @@
 #include <vector>
 #include <iostream>
 
-/*MatrixOp::Matrix mtxAddition(const Matrix& a, const Matrix& b) {
-    std::vector<double> c;
+Matrix MatrixOp::mtxAddition(const Matrix& a, const Matrix& b) {
 
     //indices
-    int rowA = a.row();
-    int colA = a.col();
-    int rowB = b.row();
-    int colB = b.col();
+    int rowA = a.getRow();
+    int colA = a.getCol();
+    int rowB = b.getRow();
+    int colB = b.getCol();
 
     //data matrices
-    std::vector<double> mtxA = a.data;
-    std::vector<double> mtxB = b.data;
+    std::vector<double> mtxA = a.getMtx();
+    std::vector<double> mtxB = b.getMtx();
 
-    for (i)
-}()
-*/
+    //TODO: matrix add implementation
+
+    //Filler
+    return {};
+}
