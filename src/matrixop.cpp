@@ -12,7 +12,6 @@ Matrix MatrixOp::mtxAddition(const Matrix& a, const Matrix& b) {
     int colB = b.getCol();
 
     //data matrices
-    std::vector<double> mtxA = a.getMtx();
     std::vector<double> mtxB = b.getMtx();
 
     //TODO: matrix add implementation
