@@ -5,6 +5,6 @@
 //Methods
 class MatrixOp {
 public:
-    Matrix mtxAddition(const Matrix& a, const Matrix& b);
-    Matrix mtxSubtraction(const Matrix& a, const Matrix& b);
+    static Matrix mtxAddition(const Matrix& a, const Matrix& b);
+    static Matrix mtxSubtraction(const Matrix& a, const Matrix& b);
 };

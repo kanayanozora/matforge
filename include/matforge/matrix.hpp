@@ -8,6 +8,7 @@ class Matrix {
 
 public:
     Matrix(int row, int col);
+    Matrix(int row, int col, const std::vector<double>& mtx);
     Matrix();
     ~Matrix();
 
@@ -17,4 +18,6 @@ public:
 
     void setRow(int row);
     void setCol(int col);
+
+    void printMtx() const;
 };
