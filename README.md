@@ -3,9 +3,9 @@ A C++ project exploring matrix representations, numerical linear algebra operati
 ## Matrix Operations
 - [x] Matrix addition
 - [x] Matrix subtraction
-- [ ] Scalar multiplication
+- [x] Scalar multiplication
 - [ ] Matrix multiplication
-- [ ] Transpose 
+- [x] Transpose 
 - [ ] Determinant
 - [ ] Inverse
 - [ ] Row reduction

@@ -54,3 +54,31 @@ Matrix MatrixOp::mtxSubtraction(const Matrix& a, const Matrix& b) {
 
     return c;
 }
+
+Matrix MatrixOp::scalarMultiplication(const Matrix& a, const double& scalar) {
+    const std::vector<double> mtxA = a.getMtx();
+    std::vector<double> mtxC;
+
+    for (double i : mtxA) {
+        mtxC.push_back(scalar * i);
+    }
+    Matrix c(a.getRow(), a.getCol(), mtxC);
+
+    return c;
+}
+
+Matrix MatrixOp::mtxTranspose(const Matrix& a) {
+    const int rowA = a.getRow();
+    const int colA = a.getCol();
+    const std::vector<double> mtxA = a.getMtx();
+    std::vector<double> mtxC;
+
+    for (int i = 0; i < colA; i++) {
+        for (int j = 0; j < rowA; j++) {
+            mtxC.push_back(mtxA[j * colA + i]);
+        }
+    }
+    Matrix c(colA, rowA, mtxC);
+
+    return c;
+}
