@@ -3,6 +3,7 @@
 #include <matforge/matrixop.hpp>
 
 using namespace std;
+//Temporary interactive terminal thing
 
 //Helper functions
 static std::vector<double> matrixInit(const int rows, const int cols) {
@@ -115,6 +116,37 @@ static void matrixTranspose() {
 
 }
 
+static void matrixMultiplication() {
+    int rowsA, colsA, rowsB, colsB;
+    std::cout << "Matrix A\n";
+    std::cout << "Enter number of rows: ";
+    std::cin >> rowsA;
+    std::cout << "Enter number of columns: ";
+    std::cin >> colsA;
+    if (rowsA <= 0 || colsA <= 0) {
+        throw std::invalid_argument("Rows and cols should be positive");
+    }
+    const std::vector<double> mtxA = matrixInit(rowsA, colsA);
+    const Matrix A(rowsA, colsA, mtxA);
+
+    std::cout << "Matrix B \n";
+    std::cout << "Enter number of rows: ";
+    std::cin >> rowsB;
+    std::cout << "Enter number of columns: ";
+    std::cin >> colsB;
+    if (rowsB <= 0 || colsB <= 0) {
+        throw std::invalid_argument("Rows and cols should be positive");
+    }
+    const std::vector<double> mtxB = matrixInit(rowsB, colsB);
+    const Matrix B(rowsB, colsB, mtxB);
+
+    const Matrix cMul = MatrixOp::mtxMultiplication(A, B);
+
+    std::cout << "Matrix multiplication" << std::endl;
+    cMul.printMtx();
+}
+
+
 static void chooseOperation(const int option) {
     switch (option) {
         case 1:
@@ -128,6 +160,9 @@ static void chooseOperation(const int option) {
             break;
         case 4:
             matrixTranspose();
+            break;
+        case 5:
+            matrixMultiplication();
             break;
         default:
             throw std::invalid_argument("Invalid option");
@@ -143,6 +178,7 @@ int main() {
         std::cout << "Op 2: Matrix subtraction \n";
         std::cout << "Op 3: Scalar multiplication \n";
         std::cout << "Op 4: Matrix transpose \n";
+        std::cout << "Op 5: Matrix multiplication \n";
         std::cout << "0: Exit\n";
 
         std::cout <<"Your choice:";

@@ -4,7 +4,7 @@ A C++ project exploring matrix representations, numerical linear algebra operati
 - [x] Matrix addition
 - [x] Matrix subtraction
 - [x] Scalar multiplication
-- [ ] Matrix multiplication
+- [x] Matrix multiplication
 - [x] Transpose 
 - [ ] Determinant
 - [ ] Inverse

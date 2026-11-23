@@ -82,3 +82,34 @@ Matrix MatrixOp::mtxTranspose(const Matrix& a) {
 
     return c;
 }
+/*Computes for A x B = C
+Dimensions for C (rowA x colB)
+
+*/
+Matrix MatrixOp::mtxMultiplication(const Matrix& a, const Matrix& b) {
+    const int rowA = a.getRow();
+    const int colA = a.getCol();
+    const int rowB = b.getRow();
+    const int colB = b.getCol();
+
+    const std::vector<double> mtxB = b.getMtx();
+    const std::vector<double> mtxA = a.getMtx();
+    std::vector<double> mtxC(rowA*colB, 0);
+
+    //Dimension check
+    if (colA != rowB) {
+        throw std::invalid_argument("Incorrect dimensions for matrix multiplication.");
+    }
+
+    //Calculation
+    for (int i = 0; i < rowA; i++) {
+        for (int j = 0; j < colB; j++) {
+            for (int k = 0; k < colA; k++) {
+                mtxC[i * colB + j] += mtxA[i * colA + k] * mtxB[k * colB + j];
+            }
+        }
+    }
+
+    Matrix c(rowA, colB, mtxC);
+    return c;
+}
